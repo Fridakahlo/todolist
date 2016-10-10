@@ -1,0 +1,58 @@
+body{
+
+	width:100%;
+	margin:auto 0;
+	padding:auto 0;
+	font-size:18px;
+
+}
+.content {
+	width:100%;
+	display:flex;
+}
+
+.menu {
+
+	border:1px solid red;
+	width : 15%;
+	min-height: 50em;
+}
+
+
+.todo {
+	border:1px solid blue;
+	width:85%;
+	min-height: 50em;
+
+}
+
+.todo h2{
+	text-align: center;
+}
+.saisieTache {
+
+	width:70%;
+	height:2.5em;
+
+}
+
+.enterList {
+
+	background-color: red;
+}
+
+.tache {
+	display:flex;
+	width:100%;
+	background-color:blue;
+	height:2em;
+	color:#FFF;
+	padding: 10px;
+}
+
+.rayer {
+
+	text-decoration:line-through;
+
+
+}
