@@ -6,16 +6,18 @@
 	var tabValue= [];
 
 
-$('#createdTache').on("click",function(){
+	$('#createdTache').click(function(){
 
-	
+
 
 		var todo = {
 
 			value : $('#newTache').val(),
 			status : false,
 			nameList : null,
-		
+			id : 'div'+(tabValue.length+1),
+			
+
 
 		}
 
@@ -25,80 +27,98 @@ $('#createdTache').on("click",function(){
 		tabValue.push(todo);
 
 
-		$('#affichList').append("<div class='tache'><input class='check' id='check"+tabValue.length+"'data-object='"+tabValue.length+"' type='checkbox'><div  id='"+tabValue.length+"' class='tacheContent'>"+tabValue[tabValue.length-1].value+"</div></div>");
+		$('#affichList').append("<div  id='div"+tabValue.length+"' class='tache'><input class='check' id='check"+tabValue.length+"'data-object='"+tabValue.length+"' type='checkbox'><div  id='"+tabValue.length+"' class='tacheContent'>"+tabValue[tabValue.length-1].value+"</div></div>");
 
-
-		$('.check').change(function(){
-
-
-
-				if(checked("#check"+$(this).data("object"))){
-
-					
-					tabValue[$(this).data("object")-1].status = true ;
-					$("#"+$(this).data("object")).addClass('rayer');
-
-			
-				}
-
-				if(!checked("#check"+$(this).data("object"))){
-
-					tabValue[$(this).data("object")-1].status = false ;
-					$("#"+$(this).data("object")).removeClass('rayer');
-
-
-				}
-
-
-			});
+ 
+		$('.check').click(function(){
 
 
 
-		$("#checkEffect").click(function(){
-			$('#affichList').html("");
+			if(checked("#check"+$(this).data("object"))){
 
 
-			for(var i=0; i<tabValue.length; i++){
-				if (tabValue[i].status === true){
+				tabValue[$(this).data("object")-1].status = true ;
+				$("#"+$(this).data("object")).addClass('rayer');
 
-					$('#affichList').append("<div class='tache'><input class='check'  type='checkbox' checked><div class='tacheContent'>"+tabValue[i].value+"</div></div>");
 
-				}
+			}
+
+			if(!checked("#check"+$(this).data("object"))){
+
+				tabValue[$(this).data("object")-1].status = false ;
+				$("#"+$(this).data("object")).removeClass('rayer');
 
 
 			}
 
 
+		});
+
+
+
+
+		$("#checkEffect").click(function(){
+
+			for(var i =0;i < tabValue.length;i++){
+
+				if (tabValue[i].status === false){
+
+					$('#'+tabValue[i].id).addClass('displayNone');
+
+				
+
+				}
+				if (tabValue[i].status === true){
+
+					$('#'+tabValue[i].id).removeClass('displayNone');
+
+				};
+
+			}
+
+		
 
 
 		});
 
 		$("#checkAll").click(function(){
-			$('#affichList').html("");
 
+			for(var i =0;i < tabValue.length;i++){
 
-			for(var i=0; i<tabValue.length; i++){
-					if (tabValue[i].status === true){
-						$('#affichList').append("<div class='tache'><input class='check'  type='checkbox' checked><div class='tacheContent'>"+tabValue[i].value+"</div></div>");
-					}
+				$('#'+tabValue[i].id).removeClass('displayNone');
 
-					if(tabValue[i].status === false){
-						$('#affichList').append("<div class='tache'><input class='check'  type='checkbox'><div class='tacheContent'>"+tabValue[i].value+"</div></div>");
-					}
-
-
+				
 			}
 
-
+			
 		});
+
+		$("#checkTodo").click(function(){
+
+			for(var i =0;i < tabValue.length;i++){
+
+				if (tabValue[i].status === true){
+
+					$('#'+tabValue[i].id).addClass('displayNone');
+
+				}
+				if (tabValue[i].status === false){
+					$('#'+tabValue[i].id).removeClass('displayNone');
+
+				}
+
+			}
 
 		
 
 
+		});
+
+
+	});
+
+
 	
-
-
-});
 
 
 
@@ -129,7 +149,7 @@ $('#createdTache').on("click",function(){
 
 
 
-		
+
 
 
 // })();
