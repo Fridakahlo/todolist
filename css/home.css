@@ -56,3 +56,11 @@ body{
 
 
 }
+
+.displayNone {
+	display:none;
+}
+
+.displayBlock {
+	display: block;
+}
