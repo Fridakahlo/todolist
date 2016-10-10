@@ -7,7 +7,10 @@
 
 
 	$('#createdTache').click(function(){
+	
+			
 
+		
 
 
 		var todo = {
@@ -21,14 +24,12 @@
 
 		}
 
-		
-		// permet d'envoyer un element vers un tableau 
 
-		tabValue.push(todo);
-
-
-		$('#affichList').append("<div  id='div"+tabValue.length+"' class='tache'><input class='check' id='check"+tabValue.length+"'data-object='"+tabValue.length+"' type='checkbox'><div  id='"+tabValue.length+"' class='tacheContent'>"+tabValue[tabValue.length-1].value+"</div></div>");
-
+		if($('#newTache').val()){
+		 
+			tabValue.push(todo);
+			$('#affichList').append("<div  id='div"+tabValue.length+"' class='tache'><input class='check' id='check"+tabValue.length+"'data-object='"+tabValue.length+"' type='checkbox'><div  id='"+tabValue.length+"' class='tacheContent'>"+tabValue[tabValue.length-1].value+"</div></div>");
+		}
  
 		$('.check').click(function(){
 
