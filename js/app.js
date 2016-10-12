@@ -1,4 +1,4 @@
-
+(function(){
 
 
 	"use strict";
@@ -133,6 +133,8 @@
 
 				tabValue[$(this).data("object")-1].status = true ;
 				$("#"+$(this).data("object")).addClass('rayer');
+				var tab = JSON.stringify(tabValue);
+				localStorage.setItem("tabValue",tab);
 
 			}
 
@@ -140,6 +142,8 @@
 
 				tabValue[$(this).data("object")-1].status = false ;
 				$("#"+$(this).data("object")).removeClass('rayer');
+				var tab = JSON.stringify(tabValue);
+				localStorage.setItem("tabValue",tab);
 			}
 
 		});
@@ -230,6 +234,8 @@
 	return $(check).is(":checked");
 
 	}
+
+})();
 
 	
 
