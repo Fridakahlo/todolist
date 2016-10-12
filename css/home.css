@@ -1,66 +1,121 @@
 body{
-
+	
 	width:100%;
-	margin:auto 0;
-	padding:auto 0;
+	margin:0;
+	padding:0;
 	font-size:18px;
-
+	font-family: 'Roboto Slab', serif;
+	color:#090707;
+	background-image: url("https://hd.unsplash.com/photo-1469920783271-4ee08a94d42d");
+	background-repeat: no-repeat;
+	background-size: cover;
+	
 }
+
+
+html{
+	height: 100%;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
 .content {
 	width:100%;
 	display:flex;
-}
-
-.menu {
-
-	border:1px solid red;
-	width : 15%;
-	min-height: 50em;
-}
-
-
-.todo {
-	border:1px solid blue;
-	width:85%;
-	min-height: 50em;
-
-}
-
-.todo h2{
-	text-align: center;
-}
-.saisieTache {
-
-	width:70%;
-	height:2.5em;
 
 }
 
 .enterList {
-
-	background-color: red;
+	background-color: #52616a;
+	padding:1em;
+	width:100%;
 }
 
-.tache {
-	display:flex;
+.menu {
+
+	width : 12.5%;
+	background-color:#f0f5f9;
+	text-align: center;
+	min-height: 70em;
+
+	padding:0;
+	border:1px solid  #444f59;
+}
+
+.todo{
 	width:100%;
-	background-color:blue;
+}
+
+.filtre h3 {
+
+	margin:0;
+	padding:0;
+	
+}
+.titleFilter {
+	width:100%;
+	padding-top:1.25em;
+	padding-bottom: 1.25em;
+	background-color: #444f59;
+	color:#fff;
+
+}
+
+.saisieTache {
+	width:75%;
 	height:2em;
-	color:#FFF;
-	padding: 10px;
+}
+
+#createdTache {
+	background-color:#dddfe6;
+	border:1px solid #444f59;
+	font-size:18px;
+	padding:0.25em;
+	border-radius: 0.3em;
 }
 
 .rayer {
-
 	text-decoration:line-through;
+	color:#C65146;
+}
+
+.tache {
+	width:95%;
+	background-color: #fff;
+	margin-bottom:0.1em;
+	margin-left:2.5%;
+	border-radius:0.6em;
+	display:flex;
+	padding-top:0.5em;
+	padding-bottom: 0.5em;
+	color:#3a5134;
 
 
+}
+
+#affichList {
+	margin-top:1em;
+	background-color: none;
 }
 
 .displayNone {
 	display:none;
 }
 
-.displayBlock {
-	display: block;
+.content a {
+	color:#000;
 }
+
+.content ul {
+	list-style: none;
+	padding:0;
+	margin:0;
+	padding-top: 1em;
+}
+
+.content li {
+
+	padding-bottom:0.2em;
+}
+
