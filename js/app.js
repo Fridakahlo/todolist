@@ -4,7 +4,51 @@
 	"use strict";
 
 
+	
+
 	var tabVal = localStorage.tabValue;
+
+	var nomDeListe = [];
+
+	if(localStorage.liste === undefined){
+
+		var tab = JSON.stringify(nomDeListe);
+		localStorage.setItem("liste",tab);
+
+	};
+
+	for(var i=0;i < (JSON.parse(localStorage.liste)).length;i++){
+
+
+
+		nomDeListe.push(JSON.parse(localStorage.liste)[i]);
+
+
+	}
+
+
+
+	$("#valList").click(function(){
+
+
+		var liste ={
+
+			content : null,
+			name : $("#inputUser").val(),
+
+		};
+
+
+
+		nomDeListe.push(liste);
+
+
+		var tab = JSON.stringify(nomDeListe);
+		localStorage.setItem("liste",tab);
+
+		$('.menuList').append("<li><a href='#"+ $("#inputUser").val() + "'>"+$("#inputUser").val()+"</a></li>");
+
+	});
 
 
 	
@@ -27,9 +71,6 @@
 
 
 	}
-
-
-
 
 
 	for(var i = 0; i < tabValue.length;i++){
@@ -72,6 +113,7 @@
 
 
 		if($('#newTache').val()){
+			
 
 			tabValue.push(todo);
 
@@ -183,11 +225,12 @@
 		});
 
 
+
 	function checked (check){
 	return $(check).is(":checked");
 
 	}
 
-
+	
 
 
